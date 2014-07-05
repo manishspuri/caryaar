@@ -1,4 +1,4 @@
 caryaar
 =======
 
-A web/mobile app for carpool with Rails Api, AngularJs and Phnonegap.
+A web/mobile app for CarPool with Rails API, AngularJS and Phonegap.
