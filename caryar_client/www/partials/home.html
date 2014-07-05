@@ -27,7 +27,9 @@
 								<div class="divider divider-top"></div>
 							</div>
 							<ul class="link-list">
-								<li ng-repeat="car in cars"><a href="#">{{car.From}} to {{car.To}}</a></li>
+							  <div ng-repeat="car in cars" ng-click="requestCar(car.id)">{{car.from_location}} to {{car.to_location}} - {{car.no_of_available_seats}} 
+							  	<span style="color: green">at {{car.travel_time | date : 'HH:mm'}}</span>
+							  </div>
 							</ul>
 						</section>
 					</div>
@@ -37,8 +39,6 @@
 	</div>
 </div>
 
-
-<a href="#request"><h1>Request</h1></a>
 
 
 

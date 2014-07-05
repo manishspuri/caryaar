@@ -1,0 +1,32 @@
+Dear <%=@vehicle.owner_name%>,<br/><br/>
+  <%if @vehicle.registrations.count == 0%>
+Thankyou for registering your next travel with Car Yaar.<br/>
+<%end%>
+
+Following are the details about the travel: <br/>
+
+<table> 
+  <tr> <th colspan=2>  Travel Details</th><tr>
+  <tr> <td> Date: <%= @vehicle.travel_date %> </td> <td>Time: <%= @vehicle.travel_time %> </td></tr>
+  <tr> <td> From: <%= @vehicle.from_location %> </td><td> To: <%= @vehicle.to_location %> </td></tr>
+  <tr><td> Vehicle Type: <%= @vehicle.vehicle_type %> </td><td> Travel Date: <%= @vehicle.travel_date %> </td></tr>
+</table>
+
+<%if @vehicle.registrations.count > 0%><br/>
+
+Hey, you also have some Car Yaar's, so you don't have to travel alone. Below are the details:<br/>
+
+<table>
+<tr> <th> Sr no</th> <th> Name</th><th> Email</th><th> Phone</th><tr>
+
+<%@vehicle.registrations.each_with_index do |user, i |%>
+	<tr> <td><%=i+1%></td> <td><%=user.requestor_name%></td> <td><%=user.requestor_email%></td> <td><%=user.requestor_phone%></td></tr>
+<%end%>
+<%end%>
+<br/>
+Hope you have a Happy and safe Journey..!<br/>
+
+Regards,<br/>
+Team Car Yaar
+
+
