@@ -1,13 +1,75 @@
-<h1>Register car</h1>
 
-<div class="container">
-  <div>From: <input type="text" ng-model="vehicle.from_location"></input></div>
-  <div>To: <input type="text" ng-model="vehicle.to_location"></input></div>
-  <div>Time: <input type="text" ng-model="vehicle.travel_time"></input></div>
-  <div>Name: <input type="text" ng-model="vehicle.owner_name"></input></div>
-  <div>Vehicle type: <input type="text" ng-model="vehicle.vehicle_type"></input></div>
-  <div>Seats Available: <input type="text" ng-model="vehicle.no_of_avalable_seats"></input></div>
-  <div>Email: <input type="email" ng-model="vehicle.owner_email"></input></div>
-  <div>Travel Date: <input type="text" ng-model="vehicle.travel_date"></input></div>
-  <button ng-click="registerVehicle()">Register</submit>
+ <div ng-include="partials/header.html"></div> 
+
+<div id="main-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="12u">
+				<div id="banner">
+					<!-- <a href="#"><img src="images/banner.jpg" alt="" /></a> -->
+					<div class="caption">
+						<a href="#register" class="button">Register you Car!</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+   	<div id="list-wrapper">
+			<div class="container" id="site-list">
+				<div class="row">
+					<div class="3u" id="site-list">
+						<section class="first">
+							<h2>Register Car</h2>
+							<div class="12u">
+								<div class="divider divider-top"></div>
+							</div>
+							<form>
+							<table class="link-list">
+								<tr>
+								<td>From: </td>
+								<td><input type="text" ng-model="vehicle.from_location" /></td>
+								</tr>
+								<tr>
+									<td>Time:</td> 
+									<td><input type="text" ng-model="vehicle.travel_time" /></td></tr>
+								<tr>
+									<td>Name: </td>
+									<td><input type="text" ng-model="vehicle.owner_name" /></td>
+								</tr>
+								<tr>
+									<td>Vehicle type:</td>
+									<td><input type="text" ng-model="vehicle.vehicle_type"></td>
+								</tr>
+								<tr>
+									<td>Seats Available:</td>
+									<!-- <td><input type="text" ng-model="vehicle.no_of_avalable_seats" /></td> -->
+									<td><input type="number" name="quantity" min="1" max="5" ng-model="vehicle.no_of_avalable_seats" ></td>
+								</tr>
+								<tr>
+									<td>Email:</td>
+									<td><input type="email" ng-model="vehicle.owner_email" /></td>
+								</tr>
+								<tr>
+									<td>Travel Date:</td>
+									<td><input type="datetime" name="bdaytime" ng-model="vehicle.travel_date" /></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>
+							
+							<div id="btn-submit" >
+								<div class="caption">
+									 <button ng-click="registerVehicle()"  class="button" style="color: #FFF;">Register</submit>
+								</div>
+							</div>
+						</form>
+
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
 </div>

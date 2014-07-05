@@ -205,3 +205,10 @@
 		{
 			border-top: none;
 		}
+
+		.link-list tr
+		{
+			border-top: solid 1px #d0d0d0;
+			line-height: 2.5em;
+		}
+
