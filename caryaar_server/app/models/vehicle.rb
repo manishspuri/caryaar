@@ -13,7 +13,7 @@ class Vehicle < ActiveRecord::Base
 
 
   def send_email
-    Notifier.send_email_alert(@vehicle).deliver!
+    Notifier.send_email_alert(self).deliver!
   end
 
   def deduct_seat_by_one
