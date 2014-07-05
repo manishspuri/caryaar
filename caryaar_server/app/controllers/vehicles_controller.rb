@@ -1,10 +1,14 @@
 class VehiclesController < ApplicationController
   before_action :set_vehicle, only: [:show, :edit, :update, :destroy]
-
+  respond_to :html, :json
   # GET /vehicles
   # GET /vehicles.json
   def index
-    @vehicles = Vehicle.all
+    @vehicles= Vehicle.future_dates.seats_available
+    respond_to do |format|
+      format.html 
+      format.json { render json: @vehicles }
+    end
   end
 
   # GET /vehicles/1
