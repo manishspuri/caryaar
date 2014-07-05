@@ -4,12 +4,12 @@ angular.module('carYaarApp')
 		    get : function() {
 		    return $http.get('http://172.28.228.35:3000/vehicles.json');
 		    },
-		    registerCar : function(carRegisterData){
+		    registerVehicle : function(vehicleData){
 		    	return $http ({
 	                method: 'POST',
-	                url: 'http://172.28.228.35:3000/vehicle/create',
+	                url: 'http://172.28.228.35:3000/vehicles/create',
 	                headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-	                data: $.param(carRegisterData)
+	                data: $.param(vehicleData)
 		    	});
 		    }
 		}

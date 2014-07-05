@@ -10,5 +10,19 @@ angular.module('carYaarApp')
 			    .success(function(data){
 			    	$scope.cars = data;
 			    })
-
+    
+    $scope.registerVehicle = function() {
+    	console.log($scope.vehicle)
+    	HomeService.registerVehicle($scope.vehicle)
+			.success(function(data) {
+				HomeService.get()
+				    .success(function(data){
+				    	$scope.cars = data;
+				    })
+		    	  $scope.cars = data;
+		    })
+		    .error(function(err){
+		    	console.log(err);
+		  });
+		};   
 	});
