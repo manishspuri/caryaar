@@ -1,5 +1,6 @@
 'use strict';
 
+ 
 angular.module('carYaarApp', ['ngRoute','ngSanitize'])
     .config(function ($routeProvider) {
         $routeProvider
@@ -11,6 +12,9 @@ angular.module('carYaarApp', ['ngRoute','ngSanitize'])
         	controller: 'homeCtrl',
         	templateUrl: 'partials/request.html'
         })
-
+        .when('/register', {
+        	controller: 'homeCtrl',
+        	templateUrl: 'partials/register.html'
+        })
         .otherwise({redirectTo: '/'});
     });
