@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('carYaarApp')
-    .controller('homeCtrl', function ($scope, HomeService) {
+    .controller('homeCtrl', function ($scope, HomeService, $location) {
 		
 		// $scope.arrowMargin = (window.innerWidth)/2.2;
 		// $scope.confvenue = SetData.get_venue_data();
@@ -24,5 +24,9 @@ angular.module('carYaarApp')
 		    .error(function(err){
 		    	console.log(err);
 		  });
-		};   
+		};
+
+		$scope.requestCar = function(vehicleId) {
+      $location.path('/request/' + vehicleId);
+		}   
 	});

@@ -8,7 +8,7 @@ angular.module('carYaarApp', ['ngRoute','ngSanitize'])
             controller: 'homeCtrl',
             templateUrl: 'partials/home.html'
         })
-        .when('/request', {
+        .when('/request/:carId', {
         	controller: 'homeCtrl',
         	templateUrl: 'partials/request.html'
         })
