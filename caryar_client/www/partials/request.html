@@ -1,7 +1,4 @@
- <div ng-include="'partials/header.html'"></div> 
-
-
-		<!-- Main -->
+ <div ng-include="partials/header.html"></div> 
 
 <div id="main-wrapper">
 	<div class="container">
@@ -15,29 +12,34 @@
 				</div>
 			</div>
 		</div>
-	
-      	<div id="list-wrapper">
+	</div>
+
+   	<div id="list-wrapper">
 			<div class="container" id="site-list">
 				<div class="row">
 					<div class="3u" id="site-list">
 						<section class="first">
-							<h2>Car Pool Available</h2>
+							<h2>Request</h2>
 							<div class="12u">
 								<div class="divider divider-top"></div>
 							</div>
+							<form>
 							<ul class="link-list">
-								<li ng-repeat="car in cars"><a href="#">{{car.From}} to {{car.To}}</a></li>
+								<li>Name: <input type="text" name="text"></li>
+								<li>E-mail: <input type="email" name="email"></li>
+								<li>Phone: <input type="number" name="numericInput" min="0" max="18" value="0" /></li>
 							</ul>
+							
+							<div id="btn-submit" >
+								<div class="caption">
+									<a href="#" class="button" style="color: #FFF;">Register you Car!</a>
+								</div>
+							</div>
+						</form>
+
 						</section>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 </div>
-
-
-<a href="#request"><h1>Request</h1></a>
-
-
-

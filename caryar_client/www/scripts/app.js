@@ -7,9 +7,10 @@ angular.module('carYaarApp', ['ngRoute','ngSanitize'])
             controller: 'homeCtrl',
             templateUrl: 'partials/home.html'
         })
-        .when('/view2', {
+        .when('/request', {
         	controller: 'homeCtrl',
-        	templateUrl: 'partials/view2.html'
+        	templateUrl: 'partials/request.html'
         })
+
         .otherwise({redirectTo: '/'});
     });
