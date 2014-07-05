@@ -1,6 +1,7 @@
 Dear <%=@vehicle.owner_name%>,<br/><br/>
-
-Thankyou for registering your next travel with Car Yaar.<br/>  <%if @vehicle.registrations.count == 0%>
+  <%if @vehicle.registrations.count == 0%>
+Thankyou for registering your next travel with Car Yaar.<br/>
+<%end%>
 
 Following are the details about the travel: <br/>
 
@@ -8,7 +9,7 @@ Following are the details about the travel: <br/>
   <tr> <th colspan=2>  Travel Details</th><tr>
   <tr> <td> Date: <%= @vehicle.travel_date %> </td> <td>Time: <%= @vehicle.travel_time %> </td></tr>
   <tr> <td> From: <%= @vehicle.from_location %> </td><td> To: <%= @vehicle.to_location %> </td></tr>
-  <tr><td> Travel Date: <%= @vehicle.travel_date %> </td><td> Travel Date: <%= @vehicle.travel_date %> </td></tr>
+  <tr><td> Vehicle Type: <%= @vehicle.vehicle_type %> </td><td> Travel Date: <%= @vehicle.travel_date %> </td></tr>
 </table>
 
 <%if @vehicle.registrations.count > 0%><br/>
