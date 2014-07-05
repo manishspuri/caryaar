@@ -1,5 +1,5 @@
 class VehiclesController < ApplicationController
-  before_action :set_vehicle, only: [:show, :edit, :update, :destroy]
+  before_action :set_vehicle, only: [:show, :edit, :update, :destroy, :register]
   respond_to :html, :json
   # GET /vehicles
   # GET /vehicles.json
@@ -62,6 +62,21 @@ class VehiclesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to vehicles_url, notice: 'Vehicle was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def register 
+    
+    if request.post?
+      register = @vehicle.registrations.new(params[:register])
+       if register.save
+        format.html { redirect_to @vehicle, notice: 'Registration was successfully created.' }
+        format.json { render :show, status: :created, location: @vehicle }
+      else
+        format.html { render :new }
+        format.json { render json: register.errors, status: :unprocessable_entity }
+      end
+      
     end
   end
 

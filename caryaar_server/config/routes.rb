@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
 
   resources :vehicles do 
-    resources :registrations
+    member do 
+     get  'register'
+     post 'register'
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
