@@ -68,15 +68,16 @@ class VehiclesController < ApplicationController
   def register 
     
     if request.post?
-      register = @vehicle.registrations.new(params[:register])
-       if register.save
-        format.html { redirect_to @vehicle, notice: 'Registration was successfully created.' }
-        format.json { render :show, status: :created, location: @vehicle }
-      else
-        format.html { render :new }
-        format.json { render json: register.errors, status: :unprocessable_entity }
+      register = @vehicle.registrations.new(request_vehicle_params)
+      respond_to do |format|
+        if register.save
+          format.html { redirect_to @vehicle, notice: 'Registration was successfully created.' }
+          format.json { render :show, status: :created, location: @vehicle }
+        else
+          format.html { render :new }
+          format.json { render json: register.errors, status: :unprocessable_entity }
+        end
       end
-      
     end
   end
 
@@ -90,4 +91,8 @@ class VehiclesController < ApplicationController
     def vehicle_params
       params.permit(:from_location, :to_location, :travel_time, :owner_name, :no_of_available_seats, :owner_email, :travel_date, :vehicle_type)
     end
+    
+    def request_vehicle_params
+      params.permit(:requestor_name, :requestor_phone, :requestor_email, :vehicle_id)
+    end 
 end

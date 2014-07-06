@@ -1,7 +1,7 @@
 class Registration < ActiveRecord::Base
   belongs_to :vehicle
 
-  before_save :deduct_availability, :send_email
+  before_save :deduct_availability #:send_email
   
   validates :requestor_email, :presence=>true
 

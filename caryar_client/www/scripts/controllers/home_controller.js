@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('carYaarApp')
-    .controller('homeCtrl', function ($scope, HomeService, $location) {
+    .controller('homeCtrl', function ($scope, HomeService, $location, $rootScope) {
 		
 		// $scope.arrowMargin = (window.innerWidth)/2.2;
 		// $scope.confvenue = SetData.get_venue_data();
@@ -25,7 +25,23 @@ angular.module('carYaarApp')
 			    });
 		};
 
-		$scope.requestCar = function(vehicleId) {
+		$scope.requestVehicle = function(vehicleId) {
+		  $rootScope.vehicleId = vehicleId;
           $location.path('/request/' + vehicleId);
+		};
+
+		$scope.requestThisVehicle = function() {
+		  $scope.request.vehicle_id = $rootScope.vehicleId;
+          HomeService.requestVehicle($scope.request)
+                .success(function(data) {
+					HomeService.get()
+				    .success(function(data){
+				    	$scope.cars = data;
+				    	$location.path('/');
+				    })
+			    })
+			    .error(function(err){
+			    	console.log(err);
+			    });
 		};   
 	});
