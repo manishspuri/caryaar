@@ -10,8 +10,10 @@ module CaryaarServer
   class Application < Rails::Application
     #config.action_dispatch.default_headers.clear
     config.action_dispatch.default_headers = {
-    'Access-Control-Allow-Origin' => '*',
-    'Access-Control-Request-Method' => '*' 
+    'Access-Control-Allow-Origin' => 'http://localhost:8000',
+    'Access-Control-Request-Method' => '*', 
+    'Access-Control-Allow-Methods'  => 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     }
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
