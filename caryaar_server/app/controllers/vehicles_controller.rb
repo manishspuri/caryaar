@@ -4,7 +4,7 @@ class VehiclesController < ApplicationController
   # GET /vehicles
   # GET /vehicles.json
   def index
-    @vehicles= Vehicle.future_dates.seats_available
+    @vehicles = Vehicle.future_dates.seats_available
     respond_to do |format|
       format.html 
       format.json { render json: @vehicles }
@@ -88,6 +88,6 @@ class VehiclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vehicle_params
-      params[:vehicle]
+      params.permit(:from_location, :to_location, :travel_time, :owner_name, :no_of_available_seats, :owner_email, :travel_date, :vehicle_type)
     end
 end

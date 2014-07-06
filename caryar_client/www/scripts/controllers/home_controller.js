@@ -11,22 +11,21 @@ angular.module('carYaarApp')
 			    	$scope.cars = data;
 			    })
     
-    $scope.registerVehicle = function() {
-    	console.log($scope.vehicle)
-    	HomeService.registerVehicle($scope.vehicle)
-			.success(function(data) {
-				HomeService.get()
+	    $scope.registerVehicle = function() {
+	    	HomeService.registerVehicle($scope.vehicle)
+				.success(function(data) {
+					HomeService.get()
 				    .success(function(data){
 				    	$scope.cars = data;
+				    	$location.path('/');
 				    })
-		    	  $scope.cars = data;
-		    })
-		    .error(function(err){
-		    	console.log(err);
-		  });
+			    })
+			    .error(function(err){
+			    	console.log(err);
+			    });
 		};
 
 		$scope.requestCar = function(vehicleId) {
-      $location.path('/request/' + vehicleId);
-		}   
+          $location.path('/request/' + vehicleId);
+		};   
 	});

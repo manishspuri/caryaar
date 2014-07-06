@@ -9,7 +9,7 @@ class Vehicle < ActiveRecord::Base
   scope :seats_available, -> { where(["no_of_available_seats > 0"])}
   scope :future_dates, -> {where(["travel_date >= ? ", Date.today])}
 
-  before_save :send_email
+  #before_save :send_email
 
 
   def send_email

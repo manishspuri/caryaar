@@ -27,15 +27,19 @@
 							<form>
 							<table class="link-list">
 								<tr>
-								<td>From: </td>
-								<td><input type="text" ng-model="vehicle.from_location" /></td>
+									<td>From: </td>
+									<td><input type="text" ng-model="vehicle.from_location"></td>
 								</tr>
 								<tr>
-									<td>Time:</td> 
-									<td><input type="text" ng-model="vehicle.travel_time" /></td></tr>
+									<td>To: </td>
+									<td><input type="text" ng-model="vehicle.to_location"></td>
+								</tr>
+								<tr>
+									<td>Time: </td> 
+									<td><input type="time" ng-model="vehicle.travel_time"></td></tr>
 								<tr>
 									<td>Name: </td>
-									<td><input type="text" ng-model="vehicle.owner_name" /></td>
+									<td><input type="text" ng-model="vehicle.owner_name" ></td>
 								</tr>
 								<tr>
 									<td>Vehicle type:</td>
@@ -43,20 +47,15 @@
 								</tr>
 								<tr>
 									<td>Seats Available:</td>
-									<!-- <td><input type="text" ng-model="vehicle.no_of_avalable_seats" /></td> -->
-									<td><input type="number" name="quantity" min="1" max="5" ng-model="vehicle.no_of_avalable_seats" ></td>
+									<td><input type="number" name="quantity" min="1" max="5" ng-model="vehicle.no_of_available_seats" ></td>
 								</tr>
 								<tr>
 									<td>Email:</td>
-									<td><input type="email" ng-model="vehicle.owner_email" /></td>
+									<td><input type="email" ng-model="vehicle.owner_email"></td>
 								</tr>
 								<tr>
 									<td>Travel Date:</td>
-									<td><input type="datetime" name="bdaytime" ng-model="vehicle.travel_date" /></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
+									<td><input type="date" name="bdaytime" ng-model="vehicle.travel_date"></td>
 								</tr>
 							</table>
 							
